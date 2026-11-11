@@ -39,3 +39,10 @@ The `planWithinCutoff` wrapper bounds the total wait time spent in retries. It t
 |---|---|
 | `exponentialWithJitter` | `({ baseMs, capMs, seed? }) => (attempt: number, prev: number) => number` |
 | `planWithinCutoff` | `({ plan, cutoffMs, nowMs, maxAttempts? }) => number[]` |
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
