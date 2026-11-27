@@ -1,6 +1,6 @@
 {
   "name": "backoff-plan-utils",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Pure functions for retry plans with decorrelated jitter and a total cutoff time.",
   "type": "module",
   "main": "src/index.js",
